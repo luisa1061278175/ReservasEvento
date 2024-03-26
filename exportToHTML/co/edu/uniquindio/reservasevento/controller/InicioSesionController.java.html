@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>InicioSesionController.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+InicioSesionController.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">co.edu.uniquindio.reservasevento.controller;</span>
+
+<span class="s0">import </span><span class="s1">co.edu.uniquindio.reservasevento.HelloApplication;</span>
+<span class="s0">import </span><span class="s1">javafx.application.Application;</span>
+<span class="s0">import </span><span class="s1">javafx.fxml.FXML;</span>
+<span class="s0">import </span><span class="s1">javafx.fxml.FXMLLoader;</span>
+<span class="s0">import </span><span class="s1">javafx.scene.Scene;</span>
+<span class="s0">import </span><span class="s1">javafx.scene.control.Button;</span>
+<span class="s0">import </span><span class="s1">javafx.scene.control.RadioButton;</span>
+<span class="s0">import </span><span class="s1">javafx.scene.control.TextField;</span>
+<span class="s0">import </span><span class="s1">javafx.stage.Stage;</span>
+
+<span class="s0">import </span><span class="s1">javax.swing.*;</span>
+<span class="s0">import </span><span class="s1">java.io.IOException;</span>
+
+<span class="s0">public class </span><span class="s1">InicioSesionController </span><span class="s0">extends </span><span class="s1">Application {</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">Button btnAceptar;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">RadioButton rbAdmin;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">RadioButton rbUsuario;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TextField txtContraseña;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TextField txtNombre;</span>
+
+    <span class="s0">private </span><span class="s1">String codigo = </span><span class="s2">&quot;0000&quot;</span><span class="s1">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">start(Stage stage) </span><span class="s0">throws </span><span class="s1">IOException {</span>
+        <span class="s1">FXMLLoader fxmlLoader = </span><span class="s0">new </span><span class="s1">FXMLLoader(getClass().getResource(</span><span class="s2">&quot;InicioSesion.fxml&quot;</span><span class="s1">));</span>
+        <span class="s1">Scene scene = </span><span class="s0">new </span><span class="s1">Scene(fxmlLoader.load());</span>
+        <span class="s1">stage.setTitle(</span><span class="s2">&quot;Inicio de Sesión&quot;</span><span class="s1">);</span>
+        <span class="s1">stage.setScene(scene);</span>
+        <span class="s1">stage.show();</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">public void </span><span class="s1">guardar() </span><span class="s0">throws </span><span class="s1">IOException {</span>
+
+        <span class="s0">if </span><span class="s1">(rbUsuario.isSelected()) {</span>
+
+            <span class="s1">FXMLLoader fxmlLoader = </span><span class="s0">new </span><span class="s1">FXMLLoader(HelloApplication.</span><span class="s0">class</span><span class="s1">.getResource(</span><span class="s2">&quot;TabuladoresUsuarios.fxml&quot;</span><span class="s1">));</span>
+            <span class="s1">Scene scene = </span><span class="s0">new </span><span class="s1">Scene(fxmlLoader.load());</span>
+            <span class="s1">Stage stage= </span><span class="s0">new </span><span class="s1">Stage();</span>
+            <span class="s1">stage.setScene(scene);</span>
+            <span class="s1">stage.show();</span>
+
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(rbAdmin.isSelected()) {</span>
+            <span class="s1">String n = JOptionPane.showInputDialog(</span><span class="s2">&quot;Ingresa el código: &quot;</span><span class="s1">);</span>
+            <span class="s0">while </span><span class="s1">(!n.equals(codigo)) {</span>
+                <span class="s1">JOptionPane.showMessageDialog(</span><span class="s0">null</span><span class="s1">, </span><span class="s2">&quot;Código incorrecto&quot;</span><span class="s1">);</span>
+                <span class="s1">n = JOptionPane.showInputDialog(</span><span class="s2">&quot;Ingresa el código: &quot;</span><span class="s1">);</span>
+            <span class="s1">}</span>
+
+
+            <span class="s1">FXMLLoader fxmlLoader = </span><span class="s0">new </span><span class="s1">FXMLLoader(HelloApplication.</span><span class="s0">class</span><span class="s1">.getResource(</span><span class="s2">&quot;TabuladoresUsuarios.fxml&quot;</span><span class="s1">));</span>
+            <span class="s1">Scene scene = </span><span class="s0">new </span><span class="s1">Scene(fxmlLoader.load());</span>
+            <span class="s1">Stage stage= </span><span class="s0">new </span><span class="s1">Stage();</span>
+            <span class="s1">stage.setScene(scene);</span>
+            <span class="s1">stage.show();</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">JOptionPane.showMessageDialog(</span><span class="s0">null</span><span class="s1">, </span><span class="s2">&quot;No se ha seleccionado ninguna opción.&quot;</span><span class="s1">);</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">launch(args);</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

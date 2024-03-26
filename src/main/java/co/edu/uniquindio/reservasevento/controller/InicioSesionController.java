@@ -60,7 +60,7 @@ public class InicioSesionController extends Application {
             }
 
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresUsuarios.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresAdmin.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage= new Stage();
             stage.setScene(scene);
