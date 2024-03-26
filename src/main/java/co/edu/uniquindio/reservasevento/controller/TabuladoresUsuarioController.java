@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,7 +22,7 @@ import javax.swing.JOptionPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TabuladoresUsuarioController extends Application {
+public class TabuladoresUsuarioController extends Application implements Initializable {
 
 
     @FXML

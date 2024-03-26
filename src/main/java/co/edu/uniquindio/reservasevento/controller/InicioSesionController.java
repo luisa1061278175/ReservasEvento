@@ -46,10 +46,9 @@ public class InicioSesionController extends Application {
 
         if (rbUsuario.isSelected()) {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TabuladoresUsuarios.fxml"));
-
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresUsuarios.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
+            Stage stage= new Stage();
             stage.setScene(scene);
             stage.show();
 
@@ -59,10 +58,11 @@ public class InicioSesionController extends Application {
                 JOptionPane.showMessageDialog(null, "Código incorrecto");
                 n = JOptionPane.showInputDialog("Ingresa el código: ");
             }
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TabuladoresUsuarios.fxml"));
 
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresUsuarios.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
+            Stage stage= new Stage();
             stage.setScene(scene);
             stage.show();
         } else {
