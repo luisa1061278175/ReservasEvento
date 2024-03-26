@@ -33,6 +33,18 @@ public class VPrincipalController extends Application {
         stage.show();
     }
 
+public void guardar() throws IOException {
+
+    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
+    Scene scene = new Scene(fxmlLoader.load());
+    Stage stage= new Stage();
+    stage.setScene(scene);
+    stage.show();
+
+
+
+}
+
     public static void main(String[] args) {
 
         launch();

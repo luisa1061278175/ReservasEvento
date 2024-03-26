@@ -1,12 +1,18 @@
 module co.edu.uniquindio.reservasevento {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens co.edu.uniquindio.reservasevento to javafx.fxml;
 
     exports co.edu.uniquindio.reservasevento.controller;
+
+    opens co.edu.uniquindio.reservasevento.controller;
 }
+
+
+
 
 //    exports co.edu.uniquindio.reservasevento;
 //    exports co.edu.uniquindio.reservasevento.controller;

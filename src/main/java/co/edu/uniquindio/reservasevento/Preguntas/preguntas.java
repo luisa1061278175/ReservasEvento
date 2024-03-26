@@ -6,4 +6,8 @@ public class preguntas {
 
     //2. Hace falta un atributo del usuario si es administrador? para al iniciar sesión slo
     //se muestren una interfaces especificas.
+
+    //3. Si se registra un administrador donde se guarda
+
+
 }
