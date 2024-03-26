@@ -35,7 +35,7 @@ public class VPrincipalController extends Application {
 
 public void guardar() throws IOException {
 
-    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegistroUsuario.fxml"));
     Scene scene = new Scene(fxmlLoader.load());
     Stage stage= new Stage();
     stage.setScene(scene);
