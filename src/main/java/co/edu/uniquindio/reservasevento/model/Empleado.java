@@ -4,18 +4,20 @@ import java.util.List;
 
 public class Empleado extends Persona{
 
-    private List<Evento> eventos;
+    private String eventosAsiganados;
 
-    public Empleado(String nombre, int id, String correoElectronico, List<Evento> eventos) {
+    public Empleado(String nombre, int id, String correoElectronico, String eventosAsiganados) {
         super(nombre, id, correoElectronico);
-        this.eventos = eventos;
+        this.eventosAsiganados = eventosAsiganados;
     }
 
-    public List<Evento> getEventos() {
-        return eventos;
+
+    public String getEventosAsiganados() {
+        return eventosAsiganados;
     }
 
-    public void setEventos(List<Evento> eventos) {
-        this.eventos = eventos;
+    public void setEventosAsiganados(String eventosAsiganados) {
+        this.eventosAsiganados = eventosAsiganados;
     }
 }
+
