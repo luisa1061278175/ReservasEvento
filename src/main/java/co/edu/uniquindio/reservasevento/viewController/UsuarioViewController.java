@@ -1,11 +1,22 @@
 package co.edu.uniquindio.reservasevento.viewController;
 
 import co.edu.uniquindio.reservasevento.model.Usuario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class UsuarioViewController {
 
@@ -41,4 +52,98 @@ public class UsuarioViewController {
 
     @FXML
     private TextField txtNombreUsuario;
+
+
+    private ObservableList<Usuario> ListaUsuarios;
+
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        ListaUsuarios = FXCollections.observableArrayList();
+
+        this.colCorreoUsuario.setCellValueFactory(new PropertyValueFactory<>("correo"));
+        this.colIdentificacionUsuario.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
+        this.colNombreUsuario.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+    }
+
+    @FXML
+
+        private void agregar(ActionEvent event) {
+
+        try {
+            String nombre = txtNombreUsuario.getText();
+            String correo = txtCorreoUsuario.getText();
+            int id = Integer.parseInt(txtIdentificacionUsuario.getText());
+
+
+            txtNombreUsuario.setText("");
+            txtCorreoUsuario.setText("");
+            txtIdentificacionUsuario.setText("");
+
+
+
+            Usuario u = new Usuario(nombre,id, correo);
+
+            this.ListaUsuarios.add(u);
+            this.tabla.setItems(ListaUsuarios);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error ");
+        }
+    }
+
+    @FXML
+    private void regresar(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Cierra la ventana
+        stage.close();
+    }
+
+
+    @FXML
+    private void seleccionar(MouseEvent event) {
+
+        Usuario p = this.tabla.getSelectionModel().getSelectedItem();
+
+    }
+
+    @FXML
+    private void eliminar() {
+
+        try {
+            Usuario u = this.tabla.getSelectionModel().getSelectedItem();
+
+
+            this.ListaUsuarios.remove(u);
+            this.tabla.refresh();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al intentar eliminar el producto.");
+        }
+    }
+
+    @FXML
+    private void modificar() {
+
+        Usuario p = this.tabla.getSelectionModel().getSelectedItem();
+        try {
+            String nombre = txtNombreUsuario.getText();
+            int codigo = Integer.parseInt(txtIdentificacionUsuario.getText());
+            String correo=txtCorreoUsuario.getText();
+
+           Usuario aux = new Usuario(nombre,codigo,correo);
+
+
+            p.setId(codigo);
+            p.setNombre(nombre);
+            p.setCorreoElectronico(correo);
+
+            this.tabla.refresh();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error al convertir texto a número. Asegúrate de ingresar valores válidos.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al intentar modificar el producto.");
+        }
+    }
 }
+
