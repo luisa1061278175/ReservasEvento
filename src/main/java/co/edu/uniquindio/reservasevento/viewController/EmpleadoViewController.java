@@ -13,6 +13,8 @@ public class EmpleadoViewController {
     EmpleadoController empleadoControllerService;
 
     //ObservableList<EmpleadoDto> listaEmpleadosDto= fxCollection......
+
+
     @FXML
     private Button btnAgregar;
 
