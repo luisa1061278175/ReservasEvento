@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -18,7 +19,7 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UsuarioViewController {
+public class UsuarioViewController implements Initializable {
 
     @FXML
     private Button btnAgregarUsuario;
@@ -57,13 +58,15 @@ public class UsuarioViewController {
     private ObservableList<Usuario> ListaUsuarios;
 
 
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         ListaUsuarios = FXCollections.observableArrayList();
 
-        this.colCorreoUsuario.setCellValueFactory(new PropertyValueFactory<>("correo"));
-        this.colIdentificacionUsuario.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
         this.colNombreUsuario.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        this.colCorreoUsuario.setCellValueFactory(new PropertyValueFactory<>("correoElectronico"));
+        this.colIdentificacionUsuario.setCellValueFactory(new PropertyValueFactory<>("id"));
+
     }
 
     @FXML
@@ -128,15 +131,16 @@ public class UsuarioViewController {
         Usuario p = this.tabla.getSelectionModel().getSelectedItem();
         try {
             String nombre = txtNombreUsuario.getText();
-            int codigo = Integer.parseInt(txtIdentificacionUsuario.getText());
+            int id = Integer.parseInt(txtIdentificacionUsuario.getText());
             String correo=txtCorreoUsuario.getText();
 
-           Usuario aux = new Usuario(nombre,codigo,correo);
+           Usuario aux = new Usuario(nombre,id,correo);
 
 
-            p.setId(codigo);
-            p.setNombre(nombre);
-            p.setCorreoElectronico(correo);
+
+            p.setId(aux.getId());
+            p.setNombre(aux.getNombre());
+            p.setCorreoElectronico(aux.getCorreoElectronico());
 
             this.tabla.refresh();
         } catch (NumberFormatException e) {

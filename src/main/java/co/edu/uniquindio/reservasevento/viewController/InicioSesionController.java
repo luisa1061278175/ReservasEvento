@@ -1,4 +1,4 @@
-package co.edu.uniquindio.reservasevento.controller;
+package co.edu.uniquindio.reservasevento.viewController;
 
 import co.edu.uniquindio.reservasevento.HelloApplication;
 import javafx.application.Application;
@@ -42,7 +42,7 @@ public class InicioSesionController extends Application {
     }
 
     @FXML
-    public void guardar2() throws IOException {
+    public void guardar() throws IOException {
 
         if (rbUsuario.isSelected()) {
 
@@ -54,31 +54,23 @@ public class InicioSesionController extends Application {
 
         } else if (rbAdmin.isSelected()) {
             String n = JOptionPane.showInputDialog("Ingresa el código: ");
-            while (!n.equals(codigo)) {
+            if (!n.equals(codigo)) {
                 JOptionPane.showMessageDialog(null, "Código incorrecto");
                 n = JOptionPane.showInputDialog("Ingresa el código: ");
             }
-
+     else{
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PrincipalAdministrativos.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setScene(scene);
-            stage.show();
+            stage.show();}
         } else {
             JOptionPane.showMessageDialog(null, "No se ha seleccionado ninguna opción.");
         }
     }
 
-        public  void guardar() throws IOException {
 
-
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Empleado.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage= new Stage();
-            stage.setScene(scene);
-            stage.show();
-        }
 
 
     public static void main(String[] args) {

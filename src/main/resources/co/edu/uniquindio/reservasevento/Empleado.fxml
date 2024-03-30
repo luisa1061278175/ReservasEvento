@@ -10,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<HBox maxHeight="-Infinity" fx:controller="co.edu.uniquindio.reservasevento.viewController.EmpleadoViewController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.reservasevento.viewController.EmpleadoViewController">
    <children>
       <VBox alignment="CENTER" prefHeight="514.0" prefWidth="317.0" styleClass="color-blanco" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
          <children>
@@ -53,10 +52,10 @@
          <children>
             <TableView prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="111.76116859912872" text="Nombre" />
-                <TableColumn prefWidth="141.85074615478516" text="Identificación" />
-                  <TableColumn prefWidth="84.53729248046875" text="Correo" />
-                  <TableColumn prefWidth="116.77606201171875" text="Rol Empleado" />
+                <TableColumn fx:id="colNombreEmpleado" prefWidth="111.76116859912872" text="Nombre" />
+                <TableColumn fx:id="colIdentificacionEmpleado" prefWidth="141.85074615478516" text="Identificación" />
+                  <TableColumn fx:id="colCorreoEmpleado" prefWidth="84.53729248046875" text="Correo" />
+                  <TableColumn fx:id="colRolEmpleado" prefWidth="116.77606201171875" text="Rol Empleado" />
               </columns>
             </TableView>
             <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="21.0" prefWidth="126.0" styleClass="button4" stylesheets="@style.css" text="Agregar">

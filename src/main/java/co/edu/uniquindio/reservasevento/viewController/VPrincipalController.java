@@ -2,8 +2,10 @@ package co.edu.uniquindio.reservasevento.viewController;
 
 import co.edu.uniquindio.reservasevento.HelloApplication;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -43,7 +45,16 @@ public void guardar() throws IOException {
 
 
 
+
 }
+
+    private void cerrarVentanaActual(ActionEvent event) {
+        // Obtiene el Stage (escenario) de la ventana actual
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Cierra la ventana actual
+        stage.close();
+    }
 
     public static void main(String[] args) {
 

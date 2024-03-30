@@ -11,6 +11,7 @@ module co.edu.uniquindio.reservasevento {
     opens co.edu.uniquindio.reservasevento.controller;
     exports co.edu.uniquindio.reservasevento.viewController;
     opens co.edu.uniquindio.reservasevento.viewController;
+    opens co.edu.uniquindio.reservasevento.model to javafx.base;
 }
 
 
