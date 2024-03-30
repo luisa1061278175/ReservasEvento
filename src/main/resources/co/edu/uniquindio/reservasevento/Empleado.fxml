@@ -50,7 +50,7 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="514.0" prefWidth="471.0" styleClass="vbox" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
          <children>
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="tablaEmpleado" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="colNombreEmpleado" prefWidth="111.76116859912872" text="Nombre" />
                 <TableColumn fx:id="colIdentificacionEmpleado" prefWidth="141.85074615478516" text="Identificación" />

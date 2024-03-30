@@ -5,30 +5,20 @@ import java.util.List;
 public class Evento {
 
 
-    private int id;
     private String nombre;
     private String descripción;
     private String fecha;
-    private String capacidadMáxima;
+    private String capacidadMaxima;
     private Empleado empleadoEncargado;
     private Reserva reservasEvento;
 
-    public Evento(int id, String nombre, String descripción, String fecha, String capacidadMáxima, Empleado empleadoEncargado, Reserva reservasEvento) {
-        this.id = id;
+    public Evento(String nombre, String descripción, String fecha, String capacidadMaxima, Empleado empleadoEncargado, Reserva reservasEvento) {
         this.nombre = nombre;
         this.descripción = descripción;
         this.fecha = fecha;
-        this.capacidadMáxima = capacidadMáxima;
+        this.capacidadMaxima = capacidadMaxima;
         this.empleadoEncargado = empleadoEncargado;
         this.reservasEvento = reservasEvento;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -56,11 +46,11 @@ public class Evento {
     }
 
     public String getCapacidadMáxima() {
-        return capacidadMáxima;
+        return capacidadMaxima;
     }
 
     public void setCapacidadMáxima(String capacidadMáxima) {
-        this.capacidadMáxima = capacidadMáxima;
+        this.capacidadMaxima = capacidadMáxima;
     }
 
     public Empleado getEmpleadoEncargado() {
