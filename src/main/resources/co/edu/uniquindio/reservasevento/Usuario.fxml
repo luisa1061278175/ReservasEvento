@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" fx:controller="co.edu.uniquindio.reservasevento.viewController.UsuarioViewController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER" prefHeight="472.0" prefWidth="426.0" styleClass="color-blanco" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
          <children>

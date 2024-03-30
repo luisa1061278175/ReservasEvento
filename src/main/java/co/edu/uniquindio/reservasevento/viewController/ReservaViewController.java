@@ -77,4 +77,25 @@ public class ReservaViewController extends Application implements Initializable 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+    @FXML
+    public void eliminar(){
+
+
+    }
+
+    @FXML
+    public void agregar(){
+
+
+    }
+    @FXML
+    public void modificar(){
+
+
+    }
+    @FXML
+    public void regresar(){
+
+
+    }
 }

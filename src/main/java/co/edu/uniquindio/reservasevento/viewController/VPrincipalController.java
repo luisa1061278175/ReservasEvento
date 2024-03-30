@@ -1,4 +1,4 @@
-package co.edu.uniquindio.reservasevento.controller;
+package co.edu.uniquindio.reservasevento.viewController;
 
 import co.edu.uniquindio.reservasevento.HelloApplication;
 import javafx.application.Application;

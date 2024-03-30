@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" fx:controller="co.edu.uniquindio.reservasevento.viewController.EventoViewController" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER" prefHeight="452.0" prefWidth="280.0" styleClass="color-blanco" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
          <children>
@@ -73,22 +73,22 @@
                   <TableColumn fx:id="colCantidadMaximaEventos" prefWidth="149.014892578125" text="Cantidad Máxima" />
                </columns>
             </TableView>
-            <Button fx:id="btnAgregarEventos" mnemonicParsing="false" onAction="#agregar" prefHeight="21.0" prefWidth="126.0" styleClass="button4" stylesheets="@style.css" text="Agregar">
+            <Button fx:id="btnAgregarEventos" mnemonicParsing="false"  prefHeight="21.0" prefWidth="126.0" styleClass="button4" stylesheets="@style.css" text="Agregar">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnEliminarEventos" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Eliminar">
+            <Button fx:id="btnEliminarEventos" mnemonicParsing="false"  prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Eliminar">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnModificarEventos" mnemonicParsing="false" onAction="#modificar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Modificar">
+            <Button fx:id="btnModificarEventos" mnemonicParsing="false"  prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Modificar">
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnRegresarEventos" mnemonicParsing="false" onAction="#regresar" prefHeight="26.0" prefWidth="133.0" styleClass="button4" stylesheets="@style.css" text="Regresar" />
+            <Button fx:id="btnRegresarEventos" mnemonicParsing="false"  prefHeight="26.0" prefWidth="133.0" styleClass="button4" stylesheets="@style.css" text="Regresar" />
          </children>
       </VBox>
    </children>

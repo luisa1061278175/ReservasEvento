@@ -42,13 +42,13 @@ public class InicioSesionController extends Application {
     }
 
     @FXML
-    public void guardar() throws IOException {
+    public void guardar2() throws IOException {
 
         if (rbUsuario.isSelected()) {
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresUsuarios.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PrincipalUsuarios.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage= new Stage();
+            Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
 
@@ -60,15 +60,26 @@ public class InicioSesionController extends Application {
             }
 
 
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("TabuladoresAdmin.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("PrincipalAdministrativos.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage= new Stage();
+            Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
         } else {
             JOptionPane.showMessageDialog(null, "No se ha seleccionado ninguna opción.");
         }
     }
+
+        public  void guardar() throws IOException {
+
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Empleado.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage= new Stage();
+            stage.setScene(scene);
+            stage.show();
+        }
+
 
     public static void main(String[] args) {
         launch(args);

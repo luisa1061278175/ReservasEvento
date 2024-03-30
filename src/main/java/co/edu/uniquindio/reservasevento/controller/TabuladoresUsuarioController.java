@@ -98,7 +98,7 @@ public class TabuladoresUsuarioController extends Application implements Initial
             txtCorreo.setText("");
 
 
-           Usuario user = new Usuario(nombre,id,correo,null);
+           Usuario user = new Usuario(nombre,id,correo);
 
             this.usuarios.add(user);
             this.tabla.setItems(usuarios);
@@ -147,7 +147,7 @@ public class TabuladoresUsuarioController extends Application implements Initial
             int id = Integer.parseInt(txtIdentificacion.getText());
             String correo = txtCorreo.getText();
 
-            Usuario user = new Usuario(nombre,id,correo,null);
+            Usuario user = new Usuario(nombre,id,correo);
 
             p.setNombre(user.getNombre());
             p.setCorreoElectronico(user.getCorreoElectronico());

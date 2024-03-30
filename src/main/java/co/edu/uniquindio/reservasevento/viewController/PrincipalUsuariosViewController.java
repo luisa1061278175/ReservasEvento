@@ -1,15 +1,9 @@
 package co.edu.uniquindio.reservasevento.viewController;
 
 import co.edu.uniquindio.reservasevento.HelloApplication;
-import co.edu.uniquindio.reservasevento.controller.EmpleadoController;
-import co.edu.uniquindio.reservasevento.model.Empleado;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,10 +12,7 @@ import java.util.ResourceBundle;
 
 import static javafx.application.Application.launch;
 
-public class EmpleadoViewController implements Initializable  {
-
-
-    EmpleadoController empleadoControllerService;
+public class PrincipalUsuariosViewController implements Initializable {
 
 
 
@@ -33,38 +24,14 @@ public class EmpleadoViewController implements Initializable  {
         stage.show();
     }
 
-    @FXML
-    public void eliminar(){
-
-
-    }
-
-    @FXML
-    public void agregar(){
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
-    @FXML
-    public void modificar(){
-
-
-    }
-    @FXML
-    public void regresar(){
-
-
-    }
-
 
 
     public static void main(String[] args) {
 
         launch();
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }
