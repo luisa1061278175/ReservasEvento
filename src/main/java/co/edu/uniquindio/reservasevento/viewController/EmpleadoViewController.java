@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -43,7 +44,7 @@ public class EmpleadoViewController implements Initializable  {
 
 
     @FXML
-    private TableView<Empleado> tablaEmpleado;
+    private TableView<Empleado> tabla;
 
     @FXML
     private TableColumn<?, ?> colCorreoEmpleado;
@@ -75,10 +76,16 @@ public class EmpleadoViewController implements Initializable  {
 
 
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Empleado.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 700, 550);
+        stage = new Stage();
+        URL url = getClass().getResource("\\src\\main\\resources\\co\\edu\\uniquindio\\reservasevento");
+
+
         stage.setScene(scene);
+        stage.setTitle("Evento!");
         stage.show();
     }
 
@@ -86,10 +93,10 @@ public class EmpleadoViewController implements Initializable  {
 
         ListaEmpleados = FXCollections.observableArrayList();
 
-        this.colCorreoEmpleado.setCellValueFactory(new PropertyValueFactory<>("correo"));
-        this.colIdentificacionEmpleado.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
-        this.colNombreEmpleado.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        this.colRolEmpleado.setCellValueFactory(new PropertyValueFactory<>("Rol del Empleado"));
+        this.colCorreoEmpleado.setCellValueFactory(new PropertyValueFactory<>("CorreoElectronico"));
+        this.colIdentificacionEmpleado.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        this.colNombreEmpleado.setCellValueFactory(new PropertyValueFactory<>("Nombre"));
+        this.colRolEmpleado.setCellValueFactory(new PropertyValueFactory<>("eventosAsiganados"));
     }
 
     @FXML
@@ -113,7 +120,7 @@ public class EmpleadoViewController implements Initializable  {
             Empleado e = new Empleado(nombre,id, correo,rol);
 
             this.ListaEmpleados.add(e);
-            this.tablaEmpleado.setItems(ListaEmpleados);
+            this.tabla.setItems(ListaEmpleados);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Error ");
         }
@@ -131,7 +138,7 @@ public class EmpleadoViewController implements Initializable  {
     @FXML
     private void seleccionar(MouseEvent event) {
 
-        Empleado e = this.tablaEmpleado.getSelectionModel().getSelectedItem();
+        Empleado e = this.tabla.getSelectionModel().getSelectedItem();
 
     }
 
@@ -139,11 +146,11 @@ public class EmpleadoViewController implements Initializable  {
     private void eliminar() {
 
         try {
-            Empleado e = this.tablaEmpleado.getSelectionModel().getSelectedItem();
+            Empleado e = this.tabla.getSelectionModel().getSelectedItem();
 
 
             this.ListaEmpleados.remove(e);
-            this.tablaEmpleado.refresh();
+            this.tabla.refresh();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al intentar eliminar el producto.");
@@ -153,7 +160,7 @@ public class EmpleadoViewController implements Initializable  {
     @FXML
     private void modificar() {
 
-        Empleado p = this.tablaEmpleado.getSelectionModel().getSelectedItem();
+        Empleado p = this.tabla.getSelectionModel().getSelectedItem();
         try {
             String nombre = txtNombreEmpleados.getText();
             int codigo = Integer.parseInt(txtIdentificacionEmpleados.getText());
@@ -167,7 +174,7 @@ public class EmpleadoViewController implements Initializable  {
             p.setNombre(nombre);
             p.setCorreoElectronico(correo);
 
-            this.tablaEmpleado.refresh();
+            this.tabla.refresh();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Error al convertir texto a número. Asegúrate de ingresar valores válidos.");
         } catch (Exception e) {

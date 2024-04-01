@@ -1,18 +1,48 @@
 
-.button4{
-    -fx-text-fill: #ffffff; /* Color del texto */
+.button4 {
+    -fx-text-fill: #000000; /* Color del texto */
     -fx-border-radius: 4px;
-    -fx-border-radius: 4px;
-    -fx-background-color: #03A9F4;
+    -fx-background-color: #F8F3EA;
     -fx-font: Afterglow;
     -fx-alignment: center;
     -fx-font-size: 19px;
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 1px; /* Ancho del borde */
 }
-.button4:hover {
+
+.buttonAzul {
+    -fx-text-fill: #ffffff; /* Color del texto */
+    -fx-border-radius: 4px;
+    -fx-background-color: #5F84A2;
+    -fx-font: Afterglow;
+    -fx-alignment: center;
+    -fx-font-size: 19px;
+    -fx-border-color: black; /* Color del borde */
+    -fx-border-width: 2px; /* Ancho del borde */
+
+}.buttonAzul:hover {
     -fx-background-color: #fffff5;
     -fx-text-fill: #000000;
 
 }
+
+}.button4:hover {
+    -fx-background-color: #fffff5;
+    -fx-text-fill: #000000;
+
+}
+
+
+#tabla .column-header {
+    -fx-background-color: #5F84A2; /* Cambia el color de fondo de la cabecera */
+    -fx-text-fill: #ffffff;
+    }
+
+
+.table-view {
+    -fx-background-color: #CADEED;
+}
+
 .colorazul{
      -fx-background-color: #03A9F4;
     

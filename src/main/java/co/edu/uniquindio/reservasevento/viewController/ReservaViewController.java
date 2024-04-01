@@ -1,8 +1,12 @@
 package co.edu.uniquindio.reservasevento.viewController;
 
+import co.edu.uniquindio.reservasevento.HelloApplication;
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -47,7 +51,7 @@ public class ReservaViewController extends Application implements Initializable 
     private TableColumn<?, ?> colUbicacionEventos;
 
     @FXML
-    private TableView<?> tabla11;
+    private TableView<?> tabla;
 
     @FXML
     private TextField txtCantidadMaximaEventos;
@@ -70,6 +74,17 @@ public class ReservaViewController extends Application implements Initializable 
 
     @Override
     public void start(Stage stage) throws Exception {
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Reserva.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 700, 550);
+        stage = new Stage();
+        URL url = getClass().getResource("\\src\\main\\resources\\co\\edu\\uniquindio\\reservasevento");
+
+        stage.setScene(scene);
+        stage.setTitle("Evento!");
+        stage.show();
 
     }
 

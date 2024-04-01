@@ -5,15 +5,19 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class VPrincipalController extends Application {
+public class VPrincipalController extends Application implements Initializable {
 
     @FXML
     private Button btnGuardar;
@@ -27,11 +31,23 @@ public class VPrincipalController extends Application {
 
 
     @Override
+
+
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("VPrincipal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        Parent root = fxmlLoader.load();
+
+        Scene scene = new Scene(root);
+
+        stage.setWidth(700);
+        stage.setHeight(550);
+        URL url = getClass().getResource("\\src\\main\\resources\\co\\edu\\uniquindio\\reservasevento");
+
+
         stage.setScene(scene);
+
+        stage.setTitle("Evento!");
+
         stage.show();
     }
 
@@ -59,6 +75,11 @@ public void guardar() throws IOException {
     public static void main(String[] args) {
 
         launch();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
 

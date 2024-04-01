@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -60,7 +61,7 @@ public class EventoViewController implements Initializable {
     private TableColumn<?, ?> colUbicacionEventos;
 
     @FXML
-    private TableView<Evento> tabla11;
+    private TableView<Evento> tabla;
 
     @FXML
     private TextField txtCantidadMaximaEventos;
@@ -82,13 +83,27 @@ public class EventoViewController implements Initializable {
 
     private ObservableList<Evento>listaEventos;
 
+
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Evento.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        Parent root = fxmlLoader.load();
+
+        Scene scene = new Scene(root);
+
+        stage.setWidth(700);
+        stage.setHeight(550);
+
         stage.setScene(scene);
+        URL url = getClass().getResource("\\src\\main\\resources\\co\\edu\\uniquindio\\reservasevento");
+
+
+
+        stage.setTitle("Evento!");
+
         stage.show();
     }
+
+
 
 
 
@@ -129,10 +144,10 @@ public class EventoViewController implements Initializable {
 
 
 
-           Evento e = new Evento(nom,descripcion,fecha,cantMaxima,null,null);
+           Evento e = new Evento(nom,descripcion,fecha,cantMaxima,hora,cantMaxima,null,null);
 
             this.listaEventos.add(e);
-            this.tabla11.setItems(listaEventos);
+            this.tabla.setItems(listaEventos);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Error ");
         }
@@ -150,7 +165,7 @@ public class EventoViewController implements Initializable {
     @FXML
     private void seleccionar(MouseEvent event) {
 
-        Evento p = this.tabla11.getSelectionModel().getSelectedItem();
+        Evento p = this.tabla.getSelectionModel().getSelectedItem();
 
     }
 
@@ -158,11 +173,11 @@ public class EventoViewController implements Initializable {
     private void eliminar() {
 
         try {
-            Evento u = this.tabla11.getSelectionModel().getSelectedItem();
+            Evento u = this.tabla.getSelectionModel().getSelectedItem();
 
 
             this.listaEventos.remove(u);
-            this.tabla11.refresh();
+            this.tabla.refresh();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al intentar eliminar el producto.");
@@ -172,20 +187,25 @@ public class EventoViewController implements Initializable {
     @FXML
     private void modificar() {
 
-        Usuario p = this.tabla11.getSelectionModel().getSelectedItem();
+        Evento p = this.tabla.getSelectionModel().getSelectedItem();
         try {
             String nombre = txtNombreEventos.getText();
             String fecha=txtFechaEventos.getText();
             String descripcion = txtDescripcion.getText();
             String hora=txtHoraEventos.getText();
+            String cantMaxima=txtCantidadMaximaEventos.getText();
+            String ubicacion=txtUbicacionEventos.getText();
 
-            Usuario aux = new Usuario(nombre,id,correo);
+            Evento aux = new Evento(nombre,descripcion,fecha,ubicacion,hora,cantMaxima,null,null);
 
 
 
-            p.setId(aux.getId());
+            p.setHora(aux.getHora());
+            p.setCapacidadMaxima(aux.getCapacidadMaxima());
+            p.setUbicacion(aux.getUbicacion());
+            p.setDescripción(aux.getDescripción());
+            p.setFecha(aux.getFecha());
             p.setNombre(aux.getNombre());
-            p.setCorreoElectronico(aux.getCorreoElectronico());
 
             this.tabla.refresh();
         } catch (NumberFormatException e) {

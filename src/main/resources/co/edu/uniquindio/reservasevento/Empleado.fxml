@@ -10,70 +10,97 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.reservasevento.viewController.EmpleadoViewController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.reservasevento.viewController.EmpleadoViewController">
    <children>
-      <VBox alignment="CENTER" prefHeight="514.0" prefWidth="317.0" styleClass="color-blanco" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
+      <VBox alignment="CENTER" prefHeight="514.0" prefWidth="844.0" style="-fx-background-color: ffffff;">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Información empleados">
                <font>
-                  <Font size="34.0" />
+                  <Font name="Beautiful Lovina Regular" size="65.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" left="15.0" right="15.0" />
+                  <Insets bottom="30.0" left="15.0" right="15.0" top="50.0" />
                </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
-            <TextField fx:id="txtNombreEmpleados">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identificación" />
-            <TextField fx:id="txtIdentificacionEmpleados">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo Electrónico" />
-            <TextField fx:id="txtCorreoEmpleados">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rol del empleado" />
-            <TextField fx:id="txtRolEmpleados">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" prefHeight="514.0" prefWidth="471.0" styleClass="vbox" stylesheets="@../../../../../../../../../../IdeaProjects/EjemploCrud/src/Estilo/style.css">
-         <children>
-            <TableView fx:id="tablaEmpleado" prefHeight="200.0" prefWidth="200.0">
-              <columns>
-                <TableColumn fx:id="colNombreEmpleado" prefWidth="111.76116859912872" text="Nombre" />
-                <TableColumn fx:id="colIdentificacionEmpleado" prefWidth="141.85074615478516" text="Identificación" />
-                  <TableColumn fx:id="colCorreoEmpleado" prefWidth="84.53729248046875" text="Correo" />
-                  <TableColumn fx:id="colRolEmpleado" prefWidth="116.77606201171875" text="Rol Empleado" />
-              </columns>
-            </TableView>
-            <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="21.0" prefWidth="126.0" styleClass="button4" stylesheets="@style.css" text="Agregar">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Eliminar">
-               <VBox.margin>
-                  <Insets bottom="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Modificar">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresar" prefHeight="26.0" prefWidth="133.0" styleClass="button4" stylesheets="@style.css" text="Regresar" />
+            <HBox prefHeight="230.0" prefWidth="750.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="113.0" prefWidth="424.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+                        <TextField fx:id="txtNombreEmpleados">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identificación" />
+                        <TextField fx:id="txtIdentificacionEmpleados">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="113.0" prefWidth="358.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Correo Electrónico" />
+                        <TextField fx:id="txtCorreoEmpleados">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rol del empleado" />
+                        <TextField fx:id="txtRolEmpleados">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="113.0" prefWidth="550.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="113.0" prefWidth="168.0">
+                           <children>
+                              <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#agregar" prefHeight="21.0" prefWidth="126.0" styleClass="button4" stylesheets="@style.css" text="Agregar">
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Eliminar">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="15.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="113.0" prefWidth="150.0">
+                           <children>
+                              <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#modificar" prefHeight="26.0" prefWidth="128.0" styleClass="button4" stylesheets="@style.css" text="Modificar">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresar" prefHeight="26.0" prefWidth="133.0" styleClass="button4" stylesheets="@style.css" text="Regresar" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="246.0" prefWidth="750.0">
+               <children>
+                  <TableView fx:id="tabla" prefHeight="234.0" prefWidth="750.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="colNombreEmpleado" prefWidth="188.417895257473" text="Nombre" />
+                      <TableColumn fx:id="colIdentificacionEmpleado" prefWidth="170.5075225830078" text="Identificación" />
+                        <TableColumn fx:id="colCorreoEmpleado" prefWidth="132.53732299804688" text="Correo" />
+                        <TableColumn fx:id="colRolEmpleado" prefWidth="220.65676879882812" text="Rol Empleado" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
