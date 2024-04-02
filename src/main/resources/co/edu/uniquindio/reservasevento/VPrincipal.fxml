@@ -8,37 +8,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #80D6FF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.reservasevento.viewController.VPrincipalController">
+<BorderPane prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;?import javafx.scene.layout.HBox?&gt;&lt;?import javafx.scene.layout.VBox?&gt;&lt;VBox alignment=&quot;CENTER&quot; prefHeight=&quot;550.0&quot; prefWidth=&quot;628.0&quot; style=&quot;-fx-background-color: CADEED;&quot; xmlns=&quot;http://javafx.com/javafx/21&quot; xmlns:fx=&quot;http://javafx.com/fxml/1&quot;&gt;   &lt;children&gt;      &lt;HBox alignment=&quot;CENTER_RIGHT&quot; prefHeight=&quot;100.0&quot; prefWidth=&quot;200.0&quot;&gt;         &lt;children&gt;            &lt;VBox alignment=&quot;TOP_RIGHT&quot; prefHeight=&quot;274.0&quot; prefWidth=&quot;186.0&quot; /&gt;         &lt;/children&gt;      &lt;/HBox&gt;      &lt;HBox prefHeight=&quot;100.0&quot; prefWidth=&quot;200.0&quot; /&gt;   &lt;/children&gt;&lt;/VBox&gt;;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.reservasevento.viewController.VPrincipalController">
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" prefHeight="550.0" prefWidth="628.0" style="-fx-background-color: CADEED;">
+            <VBox alignment="CENTER" prefHeight="550.0" prefWidth="722.0" style="-fx-background-color: #5F84A2;" stylesheets="@style.css">
                <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <VBox alignment="TOP_RIGHT" prefHeight="274.0" prefWidth="186.0" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
-               </children></VBox>
-            <VBox alignment="CENTER" prefHeight="502.0" prefWidth="600.0" styleClass="vbox" stylesheets="@style.css">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido" wrappingWidth="446.0407724380493">
-                           <font>
-                              <Font name="Bodoni MT Bold" size="75.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
-                  <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrar" styleClass="buttonAzul" stylesheets="@style.css" text="Registrar">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Eventos D&amp;L">
+                     <font>
+                        <Font name="Berlin Sans FB" size="96.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="80.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrar" prefHeight="87.0" prefWidth="320.0" styleClass="button4" stylesheets="@style.css" text="Registrar">
                      <VBox.margin>
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="btnInicioSesion" mnemonicParsing="false" onAction="#iniciarSesion" styleClass="buttonAzul" stylesheets="@style.css" text="Inicio de sesión" />
+                  <Button fx:id="btnInicioSesion" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="90.0" prefWidth="322.0" styleClass="button4" stylesheets="@style.css" text="Inicio de sesión" />
                </children>
             </VBox>
          </children>

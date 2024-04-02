@@ -6,7 +6,7 @@ public class Evento {
 
 
     private String nombre;
-    private String descripción;
+    private String descripcion;
     private String fecha;
     private String ubicacion;
     private String hora;
@@ -14,9 +14,9 @@ public class Evento {
     private Empleado empleadoEncargado;
     private Reserva reservasEvento;
 
-    public Evento(String nombre, String descripción, String fecha, String ubicacion, String hora, String capacidadMaxima, Empleado empleadoEncargado, Reserva reservasEvento) {
+    public Evento(String nombre, String descripcion, String fecha, String ubicacion, String hora, String capacidadMaxima, Empleado empleadoEncargado, Reserva reservasEvento) {
         this.nombre = nombre;
-        this.descripción = descripción;
+        this.descripcion = descripcion;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
         this.hora = hora;
@@ -34,12 +34,12 @@ public class Evento {
         this.nombre = nombre;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescripcion(String descripción) {
+        this.descripcion = descripción;
     }
 
     public String getFecha() {

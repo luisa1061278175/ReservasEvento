@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class RegistroUsuarioViewController extends Application implements Initializable {
@@ -26,14 +27,6 @@ public class RegistroUsuarioViewController extends Application implements Initia
     @FXML
     private Button btnAceptar;
 
-    @FXML
-    private RadioButton rbAdmin;
-
-    @FXML
-    private RadioButton rbUsuario;
-
-    @FXML
-    private RadioButton rbEmpleado;
 
     @FXML
     private TextField txtContraseña;
@@ -50,18 +43,16 @@ public class RegistroUsuarioViewController extends Application implements Initia
     @FXML
     private TextField txtVerificacionContraseña;
 
-    private final String codigoAdmin = "0000";
-    private final String codigoEmpleados = "1111";
 
-    private ObservableList<Usuario> idEmpleado;
-    private ObservableList<Usuario> idUsuario;
-    private ObservableList<Usuario> idAdministrativo;
+    // Lista para almacenar los usuarios registrados
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
+
+
+
 
     @Override
     public void start(Stage stage) throws IOException {
-        idAdministrativo = FXCollections.observableArrayList();
-        idUsuario = FXCollections.observableArrayList();
-        idEmpleado = FXCollections.observableArrayList();
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegistroUsuarios.fxml"));
         Parent root = fxmlLoader.load();
@@ -73,11 +64,6 @@ public class RegistroUsuarioViewController extends Application implements Initia
         stage.show();
     }
 
-    public boolean contraseñasCoinciden(String contraseña, String verificacionContraseña) {
-        return contraseña.equals(verificacionContraseña);
-    }
-
-    //se crea el metodo porque se llama varias veces a iniciar sesión
     public void iniciarSesion() throws IOException {
 
        Stage stage;
@@ -98,46 +84,18 @@ public class RegistroUsuarioViewController extends Application implements Initia
         Stage stage;
 
         String nombre = txtNombre.getText();
-        String id = txtId.getText();
+        int id = Integer.parseInt(txtId.getText());
         String contrasena1 = txtContraseña.getText();
         String contrasena2 = txtVerificacionContraseña.getText();
         String correo = txtCorreo.getText();
 
-        if (!contraseñasCoinciden(contrasena2, contrasena1)) {
-            txtContraseña.setText("");
-            txtVerificacionContraseña.setText("");
-            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-            return;
-        }
+        //Guardar datos
+        Usuario usuario = new Usuario(nombre, id, correo);
+        // Agregar el usuario a la lista de usuarios
+        usuarios.add(usuario);
 
-        if (rbUsuario.isSelected()) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-
-        } else if (rbAdmin.isSelected()) {
-            String n = JOptionPane.showInputDialog("Ingresa el código: ");
-
-            while (!n.equals(codigoAdmin)) {
-                JOptionPane.showMessageDialog(null, "Código incorrecto");
-                n = JOptionPane.showInputDialog("Ingresa el código: ");
-            }
-            iniciarSesion();
-
-        } else if (rbEmpleado.isSelected()) {
-            String n = JOptionPane.showInputDialog("Ingresa el código: ");
-
-            while (!n.equals(codigoEmpleados)) {
-                JOptionPane.showMessageDialog(null, "Código incorrecto");
-                n = JOptionPane.showInputDialog("Ingresa el código: ");
-            }
         iniciarSesion();
 
-        } else {
-            JOptionPane.showMessageDialog(null, "No se ha seleccionado ninguna opción.");
-        }
     }
 
     @Override

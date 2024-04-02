@@ -103,10 +103,6 @@ public class EventoViewController implements Initializable {
         stage.show();
     }
 
-
-
-
-
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         listaEventos = FXCollections.observableArrayList();
@@ -133,8 +129,6 @@ public class EventoViewController implements Initializable {
             String hora = txtHoraEventos.getText();
             String ubicacion = txtUbicacionEventos.getText();
 
-
-
             txtNombreEventos.setText("");
             txtDescripcion.setText("");
             txtCantidadMaximaEventos.setText("");
@@ -142,9 +136,7 @@ public class EventoViewController implements Initializable {
             txtUbicacionEventos.setText("");
             txtHoraEventos.setText("");
 
-
-
-           Evento e = new Evento(nom,descripcion,fecha,cantMaxima,hora,cantMaxima,null,null);
+           Evento e = new Evento(nom,descripcion,fecha,ubicacion,hora,cantMaxima,null,null);
 
             this.listaEventos.add(e);
             this.tabla.setItems(listaEventos);
@@ -196,6 +188,14 @@ public class EventoViewController implements Initializable {
             String cantMaxima=txtCantidadMaximaEventos.getText();
             String ubicacion=txtUbicacionEventos.getText();
 
+
+            txtHoraEventos.setText("");
+            txtDescripcion.setText("");
+            txtUbicacionEventos.setText("");
+            txtNombreEventos.setText("");
+            txtCantidadMaximaEventos.setText("");
+            txtFechaEventos.setText("");
+
             Evento aux = new Evento(nombre,descripcion,fecha,ubicacion,hora,cantMaxima,null,null);
 
 
@@ -203,7 +203,7 @@ public class EventoViewController implements Initializable {
             p.setHora(aux.getHora());
             p.setCapacidadMaxima(aux.getCapacidadMaxima());
             p.setUbicacion(aux.getUbicacion());
-            p.setDescripción(aux.getDescripción());
+            p.setDescripcion(aux.getDescripcion());
             p.setFecha(aux.getFecha());
             p.setNombre(aux.getNombre());
 

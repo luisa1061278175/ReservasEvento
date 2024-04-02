@@ -9,6 +9,19 @@
     <children>
         <TabPane layoutX="8.0" layoutY="8.0" prefHeight="581.0" prefWidth="799.0" style="-fx-background-color: ffffff;" tabClosingPolicy="UNAVAILABLE">
             <tabs>
+                <Tab text="Usuarios">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="542.0" prefWidth="790.0" style="-fx-background-color: ffffff;">
+                                    <items>
+                                        <fx:include source="Usuario.fxml" />
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
 
                 <Tab text="Reserva">
                     <content>
@@ -17,19 +30,6 @@
                                 <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="542.0" prefWidth="790.0" style="-fx-background-color: ffffff;">
                                     <items>
                                         <fx:include source="Reserva.fxml" />
-                                    </items>
-                                </SplitPane>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="Usuarios">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <SplitPane layoutX="6.0" layoutY="6.0" orientation="VERTICAL" prefHeight="542.0" prefWidth="790.0" style="-fx-background-color: ffffff;">
-                                    <items>
-                                        <fx:include source="Usuario.fxml" />
                                     </items>
                                 </SplitPane>
                             </children>

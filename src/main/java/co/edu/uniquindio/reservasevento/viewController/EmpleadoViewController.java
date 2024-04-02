@@ -24,11 +24,12 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static javafx.application.Application.launch;
 
-public class EmpleadoViewController implements Initializable  {
+public class EmpleadoViewController implements Initializable {
 
     @FXML
     private Button btnAgregar;
@@ -71,8 +72,9 @@ public class EmpleadoViewController implements Initializable  {
     private TextField txtRolEmpleados;
 
     EmpleadoController empleadoControllerService;
-
+    //para la tabla
     private ObservableList<Empleado> ListaEmpleados;
+
 
 
     public void start(Stage stage) throws IOException {
@@ -116,8 +118,7 @@ public class EmpleadoViewController implements Initializable  {
             txtIdentificacionEmpleados.setText("");
 
 
-
-            Empleado e = new Empleado(nombre,id, correo,rol);
+            Empleado e = new Empleado(nombre, id, correo, rol);
 
             this.ListaEmpleados.add(e);
             this.tabla.setItems(ListaEmpleados);
@@ -164,15 +165,20 @@ public class EmpleadoViewController implements Initializable  {
         try {
             String nombre = txtNombreEmpleados.getText();
             int codigo = Integer.parseInt(txtIdentificacionEmpleados.getText());
-            String correo=txtCorreoEmpleados.getText();
-            String rol=txtRolEmpleados.getText();
+            String correo = txtCorreoEmpleados.getText();
+            String rol = txtRolEmpleados.getText();
 
-            Empleado aux = new Empleado(nombre,codigo,correo,rol);
+            Empleado aux = new Empleado(nombre, codigo, correo, rol);
 
+            txtNombreEmpleados.setText("");
+            txtCorreoEmpleados.setText("");
+            txtRolEmpleados.setText("");
+            txtIdentificacionEmpleados.setText("");
 
             p.setId(codigo);
             p.setNombre(nombre);
             p.setCorreoElectronico(correo);
+            p.setEventosAsiganados(rol);
 
             this.tabla.refresh();
         } catch (NumberFormatException e) {
