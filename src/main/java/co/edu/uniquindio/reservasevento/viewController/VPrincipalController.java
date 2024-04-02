@@ -20,13 +20,10 @@ import java.util.ResourceBundle;
 public class VPrincipalController extends Application implements Initializable {
 
     @FXML
-    private Button btnGuardar;
+    private Button btnInicioSesion;
 
     @FXML
-    private RadioButton rbAdmin;
-
-    @FXML
-    private RadioButton rbUsuario;
+    private Button btnRegistrar;
 
 
 
@@ -51,7 +48,7 @@ public class VPrincipalController extends Application implements Initializable {
         stage.show();
     }
 
-public void guardar() throws IOException {
+public void registrar() throws IOException {
 
     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RegistroUsuario.fxml"));
     Scene scene = new Scene(fxmlLoader.load());
@@ -60,9 +57,17 @@ public void guardar() throws IOException {
     stage.show();
 
 
-
-
 }
+
+    public void iniciarSesion() throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage= new Stage();
+        stage.setScene(scene);
+        stage.show();
+
+    }
 
     private void cerrarVentanaActual(ActionEvent event) {
         // Obtiene el Stage (escenario) de la ventana actual
