@@ -1,6 +1,7 @@
 package co.edu.uniquindio.reservasevento.viewController;
-
+import co.edu.uniquindio.reservasevento.exceptions.*;
 import co.edu.uniquindio.reservasevento.HelloApplication;
+import co.edu.uniquindio.reservasevento.exceptions.CampoVacioException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -112,20 +113,43 @@ public class InicioSesionController extends Application {
         txtContraseña.setText("");
         txtNombre.setText("");
 
-        if (contrasena.equals("1")) {
-            // Se inicia sesión como usuario
 
-            JOptionPane.showMessageDialog(null, "Bienvenido Usuario");
-            tabUsuario();
-        } else if (contrasena.equals("0")) {
-            // Se inicia sesión como empleado
-            JOptionPane.showMessageDialog(null, "Bienvenido Empleado");
-            tabEmpleados();
-        } else if (esAdmin(nom, contrasena)) {
-            // Se inicia sesión como administrador
-            JOptionPane.showMessageDialog(null, "Bienvenido Administrador");
-            tabAdmin();
+        try {
+            // Validar que los campos no estén vacíos
+            if (contrasena.isEmpty()) {
+                throw new CampoVacioException("Por favor, agregar contraseña.");
+            }
+            if( nom.isEmpty() ){
+                throw new CampoVacioException("Por favor, poner usuario");
+            }
+
+            if (contrasena.equals("1")) {
+                // Se inicia sesión como usuario
+                JOptionPane.showMessageDialog(null, "Bienvenido Usuario");
+                tabUsuario();
+            } else if (contrasena.equals("0")) {
+                // Se inicia sesión como empleado
+                JOptionPane.showMessageDialog(null, "Bienvenido Empleado");
+                tabEmpleados();
+            } else if (esAdmin(nom, contrasena)) {
+                // Se inicia sesión como administrador
+                JOptionPane.showMessageDialog(null, "Bienvenido Administrador");
+                tabAdmin();
+            }
+
+        } catch (CampoVacioException e) {
+            Stage currentStage = (Stage) btnAceptar.getScene().getWindow();
+
+            // Cerrar la ventana actual
+            currentStage.close();
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("InicioSesion.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
         }
+
     }
 
     @FXML
@@ -138,5 +162,7 @@ public class InicioSesionController extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
 

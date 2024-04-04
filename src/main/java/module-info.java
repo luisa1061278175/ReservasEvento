@@ -2,7 +2,7 @@ module co.edu.uniquindio.reservasevento {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
-
+    exports co.edu.uniquindio.reservasevento;
 
     opens co.edu.uniquindio.reservasevento to javafx.fxml;
 

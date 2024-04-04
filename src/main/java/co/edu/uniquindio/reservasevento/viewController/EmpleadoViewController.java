@@ -1,5 +1,5 @@
 package co.edu.uniquindio.reservasevento.viewController;
-
+import co.edu.uniquindio.reservasevento.exceptions.*;
 import co.edu.uniquindio.reservasevento.HelloApplication;
 import co.edu.uniquindio.reservasevento.controller.EmpleadoController;
 import co.edu.uniquindio.reservasevento.model.Empleado;
