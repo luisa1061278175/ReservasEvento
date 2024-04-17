@@ -3,10 +3,10 @@ package co.edu.uniquindio.reservasevento.model;
 public class Persona {
 
     private String Nombre;
-    private int Id;
+    private String Id;
     private String CorreoElectronico;
 
-    public Persona(String nombre, int id, String correoElectronico) {
+    public Persona(String nombre, String id, String correoElectronico) {
         Nombre = nombre;
         Id = id;
         CorreoElectronico = correoElectronico;
@@ -20,11 +20,11 @@ public class Persona {
         Nombre = nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         Id = id;
     }
 

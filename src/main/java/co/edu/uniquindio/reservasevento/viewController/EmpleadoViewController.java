@@ -109,7 +109,7 @@ public class EmpleadoViewController implements Initializable {
             String nombre = txtNombreEmpleados.getText();
             String correo = txtCorreoEmpleados.getText();
             String rol = txtRolEmpleados.getText();
-            int id = Integer.parseInt(txtIdentificacionEmpleados.getText());
+            String id = txtIdentificacionEmpleados.getText();
 
 
             txtNombreEmpleados.setText("");
@@ -164,7 +164,7 @@ public class EmpleadoViewController implements Initializable {
         Empleado p = this.tabla.getSelectionModel().getSelectedItem();
         try {
             String nombre = txtNombreEmpleados.getText();
-            int codigo = Integer.parseInt(txtIdentificacionEmpleados.getText());
+            String codigo = txtIdentificacionEmpleados.getText();
             String correo = txtCorreoEmpleados.getText();
             String rol = txtRolEmpleados.getText();
 
